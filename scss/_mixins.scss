@@ -1,0 +1,14 @@
+@mixin reset() {
+	box-sizing: border-box;
+
+	margin: 0;
+
+	padding: 0;
+}
+
+@mixin title() {
+	font-weight: 300;
+
+	text-align: center;
+}
+

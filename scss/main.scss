@@ -1,0 +1,212 @@
+@use "./index" as *;
+
+* {
+	@include reset;
+}
+
+body {
+	margin: 1rem;
+
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+	max-width: 90%;
+	
+	margin-inline: auto;
+}
+
+.header {
+	&__title {
+		@include title;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+
+		margin-top: 1rem;
+	}
+
+	&__input {
+		width: 75%;
+
+		border: 0.09375em solid writeColor(color1);
+		border-radius: 2em;
+
+		padding: 0.5em 1em;
+	}
+
+	&__button {
+		appearance: none;
+
+		cursor: pointer;
+
+		background-color: writeColor(color1);
+
+		color: writeColor(color2);
+
+		transition: all 0.15s ease-in-out;
+
+		width: 20%;
+
+		border: 0.09375em solid writeColor(color1);
+		border-radius: 2em;
+
+		padding: 0.5em 0;
+
+		margin: 0 0 0 3%;
+
+		&:hover {
+			background-color: writeColor(color1-1);
+		}
+
+		&:active {
+			background-color: writeColor(color1-2);
+		}
+	}
+} 
+
+.main {
+	margin-top: 2em;
+
+	&__title {
+		@include title;
+	}
+
+	&__notes {
+		margin-top: 1rem;
+	}
+
+	&__note {
+		border: 0.09375em solid writeColor(color1);
+		border-radius: 2em;
+
+		padding: 1em;
+
+		margin-bottom: 1.5em;
+	}
+
+	&__button {
+		cursor: pointer;
+
+		border: none;
+
+		background: none;
+
+		transition: all 0.15s ease-in-out;
+
+		margin: 1rem 0.8rem 0 0;
+	}
+
+	&__edit-button {
+		color: writeColor(color3);
+
+		&:hover {
+			color: writeColor(color3-1);
+		}
+
+		&:active {
+			color: writeColor(color3-2);
+		}
+	}
+
+	&__delete-button {
+		color: writeColor(color5);
+
+		&:hover {
+			color: writeColor(color5-1);
+		}
+
+		&:active {
+			color: writeColor(color5-2);
+		}
+	}
+} 
+
+.screamer--on {
+	background-color: writeColor(color2);
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 10;
+
+	transition: all 0.2s ease-in-out;
+	transform: translate(-50%, -50%) scale(1);
+	
+	display: flex;
+	justify-content: space-between;
+
+	width: 85%;
+
+	margin-inline: auto;
+
+	padding: 1%;
+
+	border-radius: 2em;
+}
+
+.screamer__input {
+	border: 0.0625em solid rgb(169, 169, 169);
+
+	outline: none;
+}
+
+.screamer__button {
+	border: none;
+
+	background-color: writeColor(color3);
+
+		&:hover {
+			background-color: writeColor(color3-1);
+		}
+
+		&:active {
+			background-color: writeColor(color3-2);
+		}
+}
+
+.overlay-on {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background-color: rgba(0, 0, 0, 0.2);
+
+	transition: all 0.2s ease-in-out;
+
+	opacity: 1;
+
+}
+
+@media (min-width: 40.625rem) {
+	.header {
+		max-width: 40.625rem;
+
+		margin: 0 auto;
+	}
+
+	.header div {
+		margin: 1.5rem auto 0;
+	}
+
+	.main {
+		max-width: 40.625rem;
+
+		margin: 4em auto 0;
+
+		&__note{
+			margin: 0 auto 2em;
+		}
+	}
+
+	.screamer--on {
+		max-width: 40.625rem;
+
+		margin: 0 auto;
+	}
+}
