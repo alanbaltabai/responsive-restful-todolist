@@ -28,7 +28,7 @@ app.use(
 
 // connecting to mongodb & listenning for requests
 mongoose
-	.connect("mongodb://localhost/todoDB", {
+	.connect(process.env.dbURI, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		family: 4, // Cannot connect if this statement is missed, Use IPv4, skip trying IPv6. mongod --ipv6 enables IPv6 support. mongod disables IPv6 support by default.
