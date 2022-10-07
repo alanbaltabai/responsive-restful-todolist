@@ -1,7 +1,5 @@
 if (process.env.NODE_ENV !== "production") {
-	let dotenv = require("dotenv").config();
-	let dotenvExpand = require("dotenv-expand");
-	dotenvExpand.expand(dotenv);
+	require("dotenv").config();
 }
 
 // exporting packages
@@ -26,17 +24,17 @@ app.use(
 );
 
 // connecting to mongodb & listenning for requests
+const PORT = process.env.PORT || 3000;
+
 mongoose
-	.connect(process.env.dbURI, {
+	.connect(process.env.dbURI || "mongodb://localhost/todoDB", {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 		family: 4, // Cannot connect if this statement is missed, Use IPv4, skip trying IPv6. mongod --ipv6 enables IPv6 support. mongod disables IPv6 support by default.
 	})
 	.then(() =>
-		app.listen(process.env.PORT || 3000, () => {
-			console.log(
-				"ToDo app has been started on port " + process.env.PORT + "."
-			);
+		app.listen(PORT, () => {
+			console.log("ToDo app has been started on port " + PORT + ".");
 		})
 	)
 	.catch((error) => console.log(error));

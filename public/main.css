@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.header__title {
+  font-weight: 300;
+  text-align: center;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.header__input {
+  width: 75%;
+  border: 0.09375em solid #000;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+}
+.header__button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.15s ease-in-out;
+  width: 20%;
+  border: 0.09375em solid #000;
+  border-radius: 2em;
+  padding: 0.5em 0;
+  margin: 0 0 0 3%;
+}
+.header__button:hover {
+  background-color: rgb(60, 50, 50);
+}
+.header__button:active {
+  background-color: rgb(81, 78, 78);
+}
+
+.main {
+  margin-top: 2em;
+}
+.main__title {
+  font-weight: 300;
+  text-align: center;
+}
+.main__notes {
+  margin-top: 1rem;
+}
+.main__note {
+  border: 0.09375em solid #000;
+  border-radius: 2em;
+  padding: 1em;
+  margin-bottom: 1.5em;
+}
+.main__button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.15s ease-in-out;
+  margin: 1rem 0.8rem 0 0;
+}
+.main__edit-button {
+  color: rgb(128, 128, 128);
+}
+.main__edit-button:hover {
+  color: #8d8c8c;
+}
+.main__edit-button:active {
+  color: rgb(168, 163, 163);
+}
+.main__delete-button {
+  color: rgb(255, 0, 0);
+}
+.main__delete-button:hover {
+  color: rgb(200, 63, 63);
+}
+.main__delete-button:active {
+  color: rgb(155, 37, 37);
+}
+
+.screamer--on {
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-inline: auto;
+  padding: 1%;
+  border-radius: 2em;
+}
+
+.screamer__input {
+  border: 0.0625em solid rgb(169, 169, 169);
+  outline: none;
+}
+
+.screamer__button {
+  border: none;
+  background-color: rgb(128, 128, 128);
+}
+.screamer__button:hover {
+  background-color: #8d8c8c;
+}
+.screamer__button:active {
+  background-color: rgb(168, 163, 163);
+}
+
+.overlay-on {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+@media (min-width: 40.625rem) {
+  .header {
+    max-width: 40.625rem;
+    margin: 0 auto;
+  }
+  .header div {
+    margin: 1.5rem auto 0;
+  }
+  .main {
+    max-width: 40.625rem;
+    margin: 4em auto 0;
+  }
+  .main__note {
+    margin: 0 auto 2em;
+  }
+  .screamer--on {
+    max-width: 40.625rem;
+    margin: 0 auto;
+  }
+}
