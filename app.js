@@ -10,7 +10,6 @@ const favicon = require("serve-favicon"); // exports function
 const path = require("path");
 const routes = require("./routes/routes");
 const mongoose = require("mongoose");
-const { log } = require("console");
 
 // returning an express object
 const app = express(); // returns object
@@ -34,7 +33,7 @@ mongoose
 		family: 4, // Cannot connect if this statement is missed, Use IPv4, skip trying IPv6. mongod --ipv6 enables IPv6 support. mongod disables IPv6 support by default.
 	})
 	.then(() =>
-		app.listen(process.env.PORT, () => {
+		app.listen(process.env.PORT || 3000, () => {
 			console.log(
 				"ToDo app has been started on port " + process.env.PORT + "."
 			);
