@@ -1,3 +1,7 @@
-As the name says, the project is responsive and RESTful ToDoList app.
+Responsive todo list.
 
-To run (after cloning and <i>npm i</i>): <i>node app</i>
+Stack: pure JS, Node.js (Express), MongoDB (Mongoose).
+
+To run: 
+• <i>npm install</i>)
+• <i>node app</i>
